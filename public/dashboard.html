@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MySite Dash</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="./htmx" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"></script>
+    <link rel="stylesheet" href="./lit" />
+    <link rel="stylesheet" href="./tooltip" />
+  </head>
+  <body id="main-body">
+    <div class="row">
+      <h1 class="col">MySite Dashboard</h1>
+      <button
+        class="btn col"
+        hx-get='./api/logout.action'
+        hx-target="#main-body"
+        hx-swap="innerHTML"
+      >
+        Logout
+      </button>
+    </div>
+    <div
+      hx-get="./widget/dashboard"
+      hx-trigger="load"
+      hx-swap="outerHTML"
+      class="row"
+    >
+      Loading Widgets...
+    </div>
+    </form>
+  </body>
+</html>

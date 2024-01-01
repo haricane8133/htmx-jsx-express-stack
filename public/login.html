@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MySite Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="./htmx" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"></script>
+    <link rel="stylesheet" href="./lit" />
+  </head>
+  <body>
+    <div class="row">
+      <h1 class="col">MySite Login</h1>
+      <div class="col">
+        <img
+          id="login-progress-indicator"
+          class="htmx-indicator"
+          style="max-width: 30px;"
+          src="./svg-progress-hourglass"
+          alt="API Call in Progress"
+        />
+      </div>
+    </div>
+    <form
+      hx-post="./api/login.action"
+      hx-target="#result-div"
+      hx-swap="innerHTML"
+      hx-disabled-elt="#login-form-butt"
+      hx-indicator="#login-progress-indicator"
+    >
+      <div class="row">
+        <div class="6 col">
+            <input id="userid" name="userid" class="card w-100" type="text" placeholder="Username">
+        </div>
+      </div>
+      <div class="row">
+        <div class="6 col">
+            <input id="password" name="password" class="card w-100" type="password" placeholder="Password">
+        </div>
+      </div>
+      <div class="row">
+        <input id="login-form-butt" type="submit" class="btn primary" />
+      </div>
+      <div class="row">
+        <div id="result-div" />
+      </div>
+      <br />
+      <div class="row">
+        <a href="./create">Create an account</a>
+      </div>
+    </form>
+  </body>
+</html>
