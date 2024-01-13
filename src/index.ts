@@ -5,14 +5,12 @@ import router from './router';
 import { constants } from './constants';
 
 // INITIALIZE SSTORER to maintain global session data in-memory
-export const store = sstorer.init(constants.sstorerLifeMins, {
-  autospawnsession: true,
-  defaultSessionVariables: {},
+export const store = sstorer.init({
+  duration: constants.sstorerLifeMins,
 });
 // Create another to store exclusively the list of users, to be used in offline non-mongo mode
-export const userStore = sstorer.init(constants.sstorerLifeMins, {
-  autospawnsession: true,
-  defaultSessionVariables: {},
+export const userStore = sstorer.init({
+  persistFileName: constants.sstorerUsersFile,
 });
 
 if(!constants.enable_mongo) {

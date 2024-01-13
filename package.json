@@ -74,7 +74,7 @@
     "lodash": "^4.17.21",
     "mongodb": "^6.3.0",
     "morgan": "^1.10.0",
-    "sstorer": "^1.1.0"
+    "sstorer": "^2.0.1"
   },
   "husky": {
     "hooks": {

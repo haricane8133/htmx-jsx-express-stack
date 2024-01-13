@@ -48,7 +48,7 @@ router.post('/api/login.action', async (req, res) => {
 
 router.get('/api/logout.action', async (req, res) => {
   res.clearCookie(constants.loginCookieName);
-  res.sendFile(path.join(__dirname, '../public/login.html'));
+  res.send(htmx.getLogoutMessage());
 });
 
 router.get('/create', (req, res) => {

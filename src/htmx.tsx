@@ -41,6 +41,16 @@ function getRefreshButton(
   );
 }
 
+
+export function getLogoutMessage() {
+  return (
+    <>
+      <h1>Logged Out</h1>
+      <h3>Please <a href='./login'>login here</a> to start again</h3>
+    </>
+  );
+}
+
 // -> -> -> Required in login.html <- <- <-
 
 export function getUnauthorized() {

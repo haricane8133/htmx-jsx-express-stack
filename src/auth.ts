@@ -136,6 +136,5 @@ export async function storeLogin(userid: string, passHash: string) {
     }
     users.push({userid, passHash});
     userStore.putVar(constants.sstorerMainSess, constants.sstorerMainSessUserList, users);
-    userStore.dump(constants.sstorerUsersFile);
   }
 }
